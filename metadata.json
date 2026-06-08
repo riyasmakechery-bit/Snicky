@@ -1,0 +1,6 @@
+{
+  "name": "Snaiky",
+  "description": "Play, Compete, Grow. A modern, real-time simulated multiplayer snake game with custom match rooms, leaderboard, global chat, user profiles, and administrative powers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

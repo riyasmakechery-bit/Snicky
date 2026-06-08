@@ -1,0 +1,31 @@
+package com.example
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.ui.screens.SnaikyAppContent
+import com.example.ui.theme.MyApplicationTheme
+import com.example.viewmodel.SnaikyViewModel
+
+class MainActivity : ComponentActivity() {
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    enableEdgeToEdge()
+    setContent {
+      MyApplicationTheme {
+        val viewModel: SnaikyViewModel = viewModel()
+        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+          // Render inside the core edge-to-edge Scaffold
+          SnaikyAppContent(viewModel = viewModel)
+        }
+      }
+    }
+  }
+}
